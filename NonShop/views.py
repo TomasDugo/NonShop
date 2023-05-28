@@ -19,7 +19,7 @@ def productos(request):
     )
     return HttpResponse
 
-def vender(request): 
+def vender(request):
     contexto = {}
     HttpResponse = render(
         request=request,
@@ -28,7 +28,7 @@ def vender(request):
     )
     return HttpResponse
 
-def login(request): 
+def login(request):
     contexto = {}
     HttpResponse = render(
         request=request,
@@ -36,3 +36,5 @@ def login(request):
         context= contexto,
     )
     return HttpResponse
+
+

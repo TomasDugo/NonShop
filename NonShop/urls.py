@@ -20,8 +20,8 @@ from NonShop.views import pagina, productos, vender, login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', pagina),
-    path('Productos/', productos)
-    path('vender/', vender),
-    path('IniciarSesion/', login),
+    path('', pagina, name="Inicio"),
+    path('Productos/', productos, name="Productos"),
+    path('Ventas/', vender, name="Ventas"),
+    path('Iniciar Sesion/', login, name="Login"),
 ]
