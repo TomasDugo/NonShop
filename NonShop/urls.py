@@ -16,10 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from NonShop.views import pagina, productos
+from NonShop.views import pagina, productos, vender, login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', pagina),
     path('Productos/', productos)
+    path('vender/', vender),
+    path('IniciarSesion/', login),
 ]

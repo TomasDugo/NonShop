@@ -19,3 +19,20 @@ def productos(request):
     )
     return HttpResponse
 
+def vender(request): 
+    contexto = {}
+    HttpResponse = render(
+        request=request,
+        template_name='NonApp/vender.html',
+        context= contexto,
+    )
+    return HttpResponse
+
+def login(request): 
+    contexto = {}
+    HttpResponse = render(
+        request=request,
+        template_name='NonApp/login.html',
+        context= contexto,
+    )
+    return HttpResponse
