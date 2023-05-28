@@ -1,0 +1,40 @@
+{% extends "control_estudios/base.html" %}
+
+{% block contenido %}
+<section>
+  <div>
+    <h1>Productos a la venta: </h1>
+    <a href="{% url 'crear_estudiante' %}">Vender Productos</a>
+    <br>
+
+    <table class="table">
+      <tbody>
+        <tr>
+          <th>ID</th>
+          <th>Prenda</th>
+          <th>Precio</th>
+        </tr>
+        {% for alumno in object_list %}
+        <tr>
+          <td>{{ alumno.id }}</td>
+          <td>{{ alumno.nombre }}</td>
+          <td>{{ alumno.dni }}</td>
+          <td>
+            <a href="{% url 'ver_estudiante' alumno.id %}">Ver</a>
+          </td>
+          <td>
+            <a href="{% url 'editar_estudiante' alumno.id %}">Editar</a>
+          </td>
+          <td>
+            <a href="{% url 'eliminar_estudiante' alumno.id %}">
+              Borrar
+            </a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+  </div>
+</section>
+{% endblock contenido %}

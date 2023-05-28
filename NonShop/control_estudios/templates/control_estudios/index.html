@@ -1,0 +1,38 @@
+{% extends "control_estudios/base.html" %}
+
+{% block contenido %}
+<center><h1>Bienvenido a NonShop {{user.first_name}}</h1>
+<img src="{{ user.avatar.imagen.url }}" />
+</center>
+<div class="card text-white bg-secondary my-5 py-4 text-center">
+    <div class="card-body"><p class="text-white m-0">NUESTROS OBJETIVOS</p></div>
+</div>
+<!-- Content Row-->
+<div class="row gx-4 gx-lg-5">
+    <div class="col-md-4 mb-5">
+        <div class="card h-100">
+            <div class="card-body">
+                <h2 class="card-title">Diseños Innovadores</h2>
+                <p class="card-text">Nuesta busqueda por la innovación en el diseño nos permite crear prendas únicas y distintivas que brinden a nuestros clientes una experiencia de moda vanguardista y emocionante.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-5">
+        <div class="card h-100">
+            <div class="card-body">
+                <h2 class="card-title">Eco-Clothes</h2>
+                <p class="card-text">Nosotros reconocemos la importancia de la sostenibilidad en la industria de la moda. Nos comprometemos a utilizar materiales y procesos eco-friendly en la producción de nuestras prendas, minimizando así el impacto negativo en el entorno natural. A través de estas prácticas sostenibles, buscamos promover un consumo consciente y responsable, fomentando un estilo de vida más ecológico y respetuoso con el planeta.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-5">
+        <div class="card h-100">
+            <div class="card-body">
+                <h2 class="card-title">No Discriminación</h2>
+                <p class="card-text">Tenemos un firme compromiso de combatir la discriminación en todas sus formas. La moda tiene el poder de ser una herramienta para la inclusión y la diversidad. Buscamos promover la igualdad, la aceptación y la representación de diversas culturas, etnias, géneros y cuerpos en tus campañas y diseños.</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock contenido %}
