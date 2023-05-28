@@ -1,5 +1,5 @@
 """
-URL configuration for NonShop project.
+URL configuration for sistema_coder project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -15,23 +15,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
-from django.conf import settings
-from django.conf.urls.static import static
+from django.urls import path
 
-from NonShop.views import saludar, saludar_con_fecha, saludar_a_usuario,\
-    saludar_con_html, inicio
+from perfiles.views import registro, login_view, CustomLogoutView, MiPerfilUpdateView,\
+    agregar_avatar
 
 
 urlpatterns = [
-    path("", inicio, name="inicio"),
-    path("admin/", admin.site.urls),
-    path("estudios/", include("control_estudios.urls")),
-    path("perfiles/", include("perfiles.urls")),
-    path("saludo/", saludar),
-    path("saludo-hoy/", saludar_con_fecha),
-    path("saludo-html/", saludar_con_html),
+    # URLS Usuario y sesion
+    path('registro/', registro, name="registro"),
+    path('login/', login_view, name="login"),
+    path('logout/', CustomLogoutView.as_view(), name="logout"),
+    # URLS de Perfil
+    path('editar-mi-perfil/', MiPerfilUpdateView.as_view(), name="editar_perfil"),
+    path('agregar-avatar/', agregar_avatar, name="agregar_avatar"),
 ]
-
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-

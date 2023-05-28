@@ -1,40 +1,45 @@
-from django.http import HttpResponse
-from django.shortcuts import render 
+from datetime import datetime
 
-def pagina(request):
-    contexto = {}
-    HttpResponse = render(
+from django.shortcuts import render
+from django.http import HttpResponse
+
+
+def saludar(request):
+    saludo = "Hola querido usuario"
+    http_response = HttpResponse(saludo)
+    return http_response
+
+
+def saludar_con_fecha(request):
+    hoy = datetime.now()
+    saludo = f"Hola querido usuario, fecha: {hoy.day}/{hoy.month}"
+    http_response = HttpResponse(saludo)
+    return http_response
+
+
+def saludar_a_usuario(request, nombre):
+    texto = f"Hola {nombre}"
+    http_response = HttpResponse(texto)
+    return http_response
+
+
+def saludar_con_html(request):
+    contexto = {
+        "usuario": "EJEMPLO"
+    }
+    http_responde = render(
         request=request,
-        template_name='NonApp/index.html',
+        template_name='control_estudios/base.html',
         context=contexto,
     )
-    return HttpResponse
+    return http_responde
 
-def productos(request): 
+
+def inicio(request):
     contexto = {}
-    HttpResponse = render(
+    http_response = render(
         request=request,
-        template_name='NonApp/Productos.html',
-        context= contexto,
+        template_name='control_estudios/index.html',
+        context=contexto,
     )
-    return HttpResponse
-
-def vender(request):
-    contexto = {}
-    HttpResponse = render(
-        request=request,
-        template_name='NonApp/vender.html',
-        context= contexto,
-    )
-    return HttpResponse
-
-def login(request):
-    contexto = {}
-    HttpResponse = render(
-        request=request,
-        template_name='NonApp/login.html',
-        context= contexto,
-    )
-    return HttpResponse
-
-
+    return http_response
