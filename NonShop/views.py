@@ -18,3 +18,4 @@ def productos(request):
         context= contexto,
     )
     return HttpResponse
+
